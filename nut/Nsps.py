@@ -242,11 +242,7 @@ def load(fileName='titledb/files.json', verify=True):
 	Print.info('loaded file list in ' + str(time.perf_counter() - timestamp) + ' seconds')
 
 def save(fileName='titledb/files.json'):
-	with lock:
-		j = []
-		for _, k in files.items():
-			j.append(k.dict())
-		nut.writeJson(j, fileName)
+	return
 
 
 if os.path.isfile('files.json'):
