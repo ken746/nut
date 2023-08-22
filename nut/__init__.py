@@ -38,7 +38,7 @@ except BaseException:
 from ganymede import Ganymede
 
 isInitTitles = False
-isInitFiles = False
+isInitFiles = True
 hasScanned = False
 status = None
 scrapeThreads = 4
