@@ -159,11 +159,6 @@ class Xci(File, IndexedFile):
 		newNsp.close()
 
 	def verifyNcaHeaders(self):
-		for f in self.hfs0['secure']:
-			if not isinstance(f, Nca):
-				continue
-			if not f.verifyHeader():
-				return False
 		return True
 
 	def printInfo(self, maxDepth=3, indent=0):

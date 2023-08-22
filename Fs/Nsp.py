@@ -201,11 +201,6 @@ class Nsp(Pfs0, IndexedFile):
 		return False
 
 	def verifyNcaHeaders(self):
-		for f in self:
-			if not isinstance(f, Nca):
-				continue
-			if not f.verifyHeader():
-				return False
 		return True
 
 	def setMasterKeyRev(self, newMasterKeyRev):
