@@ -92,11 +92,11 @@ class Paths:  # pylint: disable=too-many-instance-attributes
 	"""
 
 	def __init__(self):
-		self.titleBase = 'titles/{name}[{id}][v{version}].nsp'
-		self.titleDLC = 'titles/DLC/{name}[{id}][v{version}].nsp'
-		self.titleUpdate = 'titles/updates/{name}[{id}][v{version}].nsp'
-		self.titleDemo = 'titles/demos/{name}[{id}][v{version}].nsp'
-		self.titleDemoUpdate = 'titles/demos/updates/{name}[{id}][v{version}].nsp'
+		self.titleBase = 'titles/{baseName}/{name} [{id}][v{version}].nsp'
+		self.titleDLC = 'titles/{baseName}/dlc/{name} [{id}][v{version}].nsp'
+		self.titleUpdate = 'titles/{baseName}/updates/{name} [{id}][v{version}].nsp'
+		self.titleDemo = 'titles/demos/{name} [{id}][v{version}].nsp'
+		self.titleDemoUpdate = 'titles/demos/updates/{name} [{id}][v{version}].nsp'
 
 		self.nsxTitleBase = None
 		self.nsxTitleDLC = None
@@ -104,17 +104,23 @@ class Paths:  # pylint: disable=too-many-instance-attributes
 		self.nsxTitleDemo = None
 		self.nsxTitleDemoUpdate = None
 
-		self.nszTitleBase = None
-		self.nszTitleDLC = None
-		self.nszTitleUpdate = None
-		self.nszTitleDemo = None
-		self.nszTitleDemoUpdate = None
+		self.nszTitleBase = 'titles/{baseName}/{name} [{id}][v{version}].nsz'
+		self.nszTitleDLC = 'titles/{baseName}/dlc/{name} [{id}][v{version}].nsz'
+		self.nszTitleUpdate = 'titles/{baseName}/updates/{name} [{id}][v{version}].nsz'
+		self.nszTitleDemo = 'titles/demos/{name} [{id}][v{version}].nsz'
+		self.nszTitleDemoUpdate = 'titles/demos/updates/{name} [{id}][v{version}].nsz'
 
-		self.xciTitleBase = None
-		self.xciTitleDLC = None
-		self.xciTitleUpdate = None
-		self.xciTitleDemo = None
-		self.xciTitleDemoUpdate = None
+		self.xciTitleBase = 'titles/{baseName}/{name} [{id}][v{version}].xci'
+		self.xciTitleDLC = 'titles/{baseName}/dlc/{name} [{id}][v{version}].xci'
+		self.xciTitleUpdate = 'titles/{baseName}/updates/{name} [{id}][v{version}].xci'
+		self.xciTitleDemo = 'titles/demos/{name} [{id}][v{version}].xci'
+		self.xciTitleDemoUpdate = 'titles/demos/updates/{name} [{id}][v{version}].xci'
+
+		self.xczTitleBase = 'titles/{baseName}/{name} [{id}][v{version}].xcz'
+		self.xczTitleDLC = 'titles/{baseName}/dlc/{name} [{id}][v{version}].xcz'
+		self.xczTitleUpdate = 'titles/{baseName}/updates/{name} [{id}][v{version}].xcz'
+		self.xczTitleDemo = 'titles/demos/{name} [{id}][v{version}].xcz'
+		self.xczTitleDemoUpdate = 'titles/demos/updates/{name} [{id}][v{version}].xcz'		
 
 		self.scan = ['.']
 		self.titleDatabase = 'titledb'
@@ -165,7 +171,8 @@ class Paths:  # pylint: disable=too-many-instance-attributes
 			f = getPath(self.nsxTitleBase, name, self.titleBase)
 		elif ext == '.xci':
 			f = getPath(self.xciTitleBase, name, self.titleBase)
-
+		elif ext == '.xcz':
+			f = getPath(self.xczTitleBase, name, self.titleBase)
 		if not f:
 			f = self.titleBase
 		return f
@@ -189,7 +196,8 @@ class Paths:  # pylint: disable=too-many-instance-attributes
 			f = getPath(self.nsxTitleDLC, name, self.titleDLC)
 		elif ext == '.xci':
 			f = getPath(self.xciTitleDLC, name, self.titleDLC)
-
+		elif ext == '.xcz':
+			f = getPath(self.xczTitleDLC, name, self.titleDLC)
 		if not f:
 			f = self.titleDLC
 		return f
@@ -213,7 +221,8 @@ class Paths:  # pylint: disable=too-many-instance-attributes
 			f = getPath(self.nsxTitleUpdate, name, self.titleUpdate)
 		elif ext == '.xci':
 			f = getPath(self.xciTitleUpdate, name, self.titleUpdate)
-
+		elif ext == '.xcz':
+			f = getPath(self.xczTitleUpdate, name, self.titleUpdate)
 		if not f:
 			f = self.titleUpdate
 		return forceExt(f, ext)
@@ -237,7 +246,8 @@ class Paths:  # pylint: disable=too-many-instance-attributes
 			f = getPath(self.nsxTitleDemo, name, self.titleDemo)
 		elif ext == '.xci':
 			f = getPath(self.xciTitleDemo, name, self.titleDemo)
-
+		elif ext == '.xcz':
+			f = getPath(self.xczTitleDemo, name, self.titleDemo)
 		if not f:
 			f = self.titleDemo
 		return f
@@ -261,7 +271,8 @@ class Paths:  # pylint: disable=too-many-instance-attributes
 			f = getPath(self.nsxTitleDemoUpdate, name, self.titleDemoUpdate)
 		elif ext == '.xci':
 			f = getPath(self.xciTitleDemoUpdate, name, self.titleDemoUpdate)
-
+		elif ext == '.xcz':
+			f = getPath(self.xczTitleDemoUpdate, name, self.titleDemoUpdate)
 		if not f:
 			f = self.titleDemoUpdate
 		return f
