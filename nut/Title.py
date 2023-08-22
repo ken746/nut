@@ -288,6 +288,22 @@ class Title:
 
 		return highest
 
+	def getLatestXcz(self, version=None):
+		highest = None
+
+		for nsp in self.getFiles():
+			try:
+				if nsp.path.endswith('.xcz'):
+					if version is not None and nsp.version == version:
+						return nsp
+
+					if not highest or int(nsp.version) > int(highest.version):
+						highest = nsp
+			except BaseException:
+				pass
+
+		return highest
+		
 	def isUpdateAvailable(self, localOnly=False):
 		nsp = self.getLatestFile()
 		if not nsp:

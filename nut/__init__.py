@@ -906,6 +906,16 @@ def organize():
 
 				latest.move()
 
+		if '.xcz' in files and len(files['.xcz']) > 0:
+			latest = t.getLatestXcz()
+
+			if latest:
+				for f in files['.xcz']:
+					if f.path != latest.path:
+						f.moveDupe()
+
+				latest.move()
+				
 	Print.info('removing empty directories')
 	Nsps.removeEmptyDir('.', False)
 	Nsps.save()
