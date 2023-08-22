@@ -92,11 +92,11 @@ class Paths:  # pylint: disable=too-many-instance-attributes
 	"""
 
 	def __init__(self):
-		self.titleBase = 'titles/{baseName}/{name} [{id}][v{version}].nsp'
-		self.titleDLC = 'titles/{baseName}/dlc/{name} [{id}][v{version}].nsp'
-		self.titleUpdate = 'titles/{baseName}/updates/{name} [{id}][v{version}].nsp'
-		self.titleDemo = 'titles/demos/{name} [{id}][v{version}].nsp'
-		self.titleDemoUpdate = 'titles/demos/updates/{name} [{id}][v{version}].nsp'
+		self.titleBase = 'zsw/{baseName}/{name} [{id}][v{version}].nsp'
+		self.titleDLC = 'zsw/{baseName}/dlc/{name} [{id}][v{version}].nsp'
+		self.titleUpdate = 'zsw/{baseName}/updates/{name} [{id}][v{version}].nsp'
+		self.titleDemo = 'zsw/demos/{name} [{id}][v{version}].nsp'
+		self.titleDemoUpdate = 'zsw/demos/updates/{name} [{id}][v{version}].nsp'
 
 		self.nsxTitleBase = None
 		self.nsxTitleDLC = None
@@ -104,23 +104,23 @@ class Paths:  # pylint: disable=too-many-instance-attributes
 		self.nsxTitleDemo = None
 		self.nsxTitleDemoUpdate = None
 
-		self.nszTitleBase = 'titles/{baseName}/{name} [{id}][v{version}].nsz'
-		self.nszTitleDLC = 'titles/{baseName}/dlc/{name} [{id}][v{version}].nsz'
-		self.nszTitleUpdate = 'titles/{baseName}/updates/{name} [{id}][v{version}].nsz'
-		self.nszTitleDemo = 'titles/demos/{name} [{id}][v{version}].nsz'
-		self.nszTitleDemoUpdate = 'titles/demos/updates/{name} [{id}][v{version}].nsz'
+		self.nszTitleBase = 'zsw/{baseName}/{name} [{id}][v{version}].nsz'
+		self.nszTitleDLC = 'zsw/{baseName}/dlc/{name} [{id}][v{version}].nsz'
+		self.nszTitleUpdate = 'zsw/{baseName}/updates/{name} [{id}][v{version}].nsz'
+		self.nszTitleDemo = 'zsw/demos/{name} [{id}][v{version}].nsz'
+		self.nszTitleDemoUpdate = 'zsw/demos/updates/{name} [{id}][v{version}].nsz'
 
-		self.xciTitleBase = 'titles/{baseName}/{name} [{id}][v{version}].xci'
-		self.xciTitleDLC = 'titles/{baseName}/dlc/{name} [{id}][v{version}].xci'
-		self.xciTitleUpdate = 'titles/{baseName}/updates/{name} [{id}][v{version}].xci'
-		self.xciTitleDemo = 'titles/demos/{name} [{id}][v{version}].xci'
-		self.xciTitleDemoUpdate = 'titles/demos/updates/{name} [{id}][v{version}].xci'
+		self.xciTitleBase = 'zsw/{baseName}/{name} [{id}][v{version}].xci'
+		self.xciTitleDLC = 'zsw/{baseName}/dlc/{name} [{id}][v{version}].xci'
+		self.xciTitleUpdate = 'zsw/{baseName}/updates/{name} [{id}][v{version}].xci'
+		self.xciTitleDemo = 'zsw/demos/{name} [{id}][v{version}].xci'
+		self.xciTitleDemoUpdate = 'zsw/demos/updates/{name} [{id}][v{version}].xci'
 
-		self.xczTitleBase = 'titles/{baseName}/{name} [{id}][v{version}].xcz'
-		self.xczTitleDLC = 'titles/{baseName}/dlc/{name} [{id}][v{version}].xcz'
-		self.xczTitleUpdate = 'titles/{baseName}/updates/{name} [{id}][v{version}].xcz'
-		self.xczTitleDemo = 'titles/demos/{name} [{id}][v{version}].xcz'
-		self.xczTitleDemoUpdate = 'titles/demos/updates/{name} [{id}][v{version}].xcz'		
+		self.xczTitleBase = 'zsw/{baseName}/{name} [{id}][v{version}].xcz'
+		self.xczTitleDLC = 'zsw/{baseName}/dlc/{name} [{id}][v{version}].xcz'
+		self.xczTitleUpdate = 'zsw/{baseName}/updates/{name} [{id}][v{version}].xcz'
+		self.xczTitleDemo = 'zsw/demos/{name} [{id}][v{version}].xcz'
+		self.xczTitleDemoUpdate = 'zsw/demos/updates/{name} [{id}][v{version}].xcz'		
 
 		self.scan = ['.']
 		self.titleDatabase = 'titledb'
@@ -128,7 +128,7 @@ class Paths:  # pylint: disable=too-many-instance-attributes
 		self.calibration = 'PRODINFO.bin'
 		self.shopNCert = 'ShopN.pem'
 		self.nspOut = '_NSPOUT'
-		self.titleImages = 'titles/images/'
+		self.titleImages = 'images/'
 
 		self.duplicates = 'duplicates/'
 
